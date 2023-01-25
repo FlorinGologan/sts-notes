@@ -1,7 +1,7 @@
 import { Bucket, Table } from "@serverless-stack/resources";
 
 export function StorageStack({ stack, app }) {
-    const table = new Table(stack, "Notes", {
+    const table = new Table(stack, "notes", {
         fields: {
             userId: "string",
             noteId: "string",

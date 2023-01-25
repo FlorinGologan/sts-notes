@@ -5,7 +5,7 @@ export function ApiStack({ stack, app }) {
 
     const { table } = use(StorageStack)
 
-    const api = new Api(stack, "Api", {
+    const api = new Api(stack, "api", {
         defaults: {
             function: {
                 permissions: [table],
@@ -18,6 +18,7 @@ export function ApiStack({ stack, app }) {
             "POST /notes": "functions/create.main",
             "GET /notes/{id}": "functions/get.main",
             "GET /notes": "functions/list.main",
+            "PUT /notes/{id}": "functions/update.main",
         }
     })
 
