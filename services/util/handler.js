@@ -16,6 +16,10 @@ export default function handler(lambda) {
         return {
             statusCode,
             body,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": true,
+            },
         };
     };
 }

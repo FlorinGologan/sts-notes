@@ -14,6 +14,14 @@ export function StorageStack({ stack, app }) {
 
     const bucket = new Bucket(stack, "Uploads", {
         name: "sts-notes",
+        cors: [
+            {
+                maxAge: "1 day",
+                allowedOrigins: ["*"],
+                allowedHeaders: ["*"],
+                allowedMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"],
+            },
+        ],
     });
 
     return {

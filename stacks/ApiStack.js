@@ -15,6 +15,9 @@ export function ApiStack({ stack, app }) {
                 }
             }
         },
+        cors: {
+            allowMethods: ["GET"],
+        },
         routes: {
             "POST /notes": "functions/create.main",
             "GET /notes/{id}": "functions/get.main",
