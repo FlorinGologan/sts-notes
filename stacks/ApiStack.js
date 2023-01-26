@@ -8,6 +8,7 @@ export function ApiStack({ stack, app }) {
     const api = new Api(stack, "api", {
         defaults: {
             function: {
+                authorizer: "iam",
                 permissions: [table],
                 environment: {
                     TABLE_NAME: table.tableName,
